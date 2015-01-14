@@ -1,11 +1,11 @@
 package rosiclair.andrew.myfirstapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends Activity {
+public class DisplayMessageActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,9 @@ public class DisplayMessageActivity extends Activity {
         setContentView(text);
 
         //Set the up button icon
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null)
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        else
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
